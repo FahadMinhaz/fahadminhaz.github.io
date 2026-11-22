@@ -116,9 +116,10 @@
   .stat-label{font-size:13px;color:var(--muted);margin-top:8px;letter-spacing:.3px}
   .stats .sglow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(127,119,221,.12),transparent 70%);top:-150px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:1}
   .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:54px}
-  .sec-num{font-family:var(--display);font-size:14px;color:var(--purple-bright);font-weight:500}
   .sec-title{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:-1px}
   .sec-line{flex:1;height:1px;background:var(--line)}
+  .sec-head.center{justify-content:center;text-align:center}
+  .sec-head.center::before{content:"";flex:1;height:1px;background:var(--line)}
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
@@ -156,15 +157,18 @@
   .work-foot{text-align:center;margin-top:48px}
 
   /* experience */
-  .timeline{position:relative;max-width:760px}
+  /* centered two-sided timeline: line down the middle, entries alternate sides */
+  .timeline{position:relative;max-width:980px;margin:0 auto}
   /* track + progress fill line */
-  .timeline::before{content:"";position:absolute;left:152px;top:8px;bottom:34px;width:2px;background:var(--line)}
-  .tl-progress{position:absolute;left:152px;top:8px;width:2px;height:0;background:linear-gradient(180deg,var(--purple-bright),var(--purple-deep));box-shadow:0 0 10px rgba(154,146,255,.5);transition:height .15s linear;z-index:1}
-  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:32px;padding-bottom:42px;position:relative}
-  .tl-item::after{content:"";position:absolute;left:147px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg-3);border:2px solid var(--line);box-shadow:0 0 0 4px var(--bg);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;z-index:2}
+  .timeline::before{content:"";position:absolute;left:calc(50% - 1px);top:8px;bottom:34px;width:2px;background:var(--line)}
+  .tl-progress{position:absolute;left:calc(50% - 1px);top:8px;width:2px;height:0;background:linear-gradient(180deg,var(--purple-bright),var(--purple-deep));box-shadow:0 0 10px rgba(154,146,255,.5);transition:height .15s linear;z-index:1}
+  .tl-item{display:grid;grid-template-columns:1fr 1fr;gap:0 96px;padding-bottom:48px;position:relative}
+  .tl-item:nth-child(even) .tl-body{order:-1;text-align:right}
+  .tl-item:nth-child(even) .tl-date{text-align:left}
+  .tl-item::after{content:"";position:absolute;left:calc(50% - 5.5px);top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg-3);border:2px solid var(--line);box-shadow:0 0 0 4px var(--bg);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;z-index:2}
   .tl-item.lit::after{background:var(--purple-bright);border-color:var(--purple-bright);box-shadow:0 0 0 4px var(--bg),0 0 12px 2px rgba(154,146,255,.6)}
-  .tl-date{font-family:var(--display);font-size:13px;color:var(--purple-bright);text-align:right;padding-top:2px;font-weight:500}
-  .tl-body{padding-left:32px}
+  .tl-date{font-family:var(--display);font-size:15px;color:var(--purple-bright);text-align:right;padding-top:1px;font-weight:500;letter-spacing:.3px}
+  .tl-body{padding-left:0}
   .tl-role{font-family:var(--display);font-weight:500;font-size:19px;margin-bottom:3px}
   .tl-co{font-size:14px;color:var(--faint);margin-bottom:10px}
   .tl-desc{color:var(--muted);font-size:15px}
@@ -244,10 +248,11 @@
     .nav-links{display:none}
     .nav-links.open{display:flex;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:var(--bg-2);border-bottom:1px solid var(--line);padding:20px 28px;gap:18px}
     .nav-toggle{display:block}
-    .tl-item{grid-template-columns:90px 1fr;gap:18px}
-    .timeline::before,.tl-progress{left:101px}
-    .tl-item::after{left:96px}
-    .tl-body{padding-left:22px}
+    .tl-item{grid-template-columns:90px 1fr;gap:40px;padding-bottom:42px}
+    .timeline::before,.tl-progress{left:109px}
+    .tl-item::after{left:104.5px}
+    .tl-date{font-size:13px;text-align:right!important}
+    .tl-item:nth-child(even) .tl-body{order:0;text-align:left}
     section{padding:72px 0}
   }
   @media(prefers-reduced-motion:reduce){
@@ -353,8 +358,7 @@
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title">About</h2>
+      <h2 class="sec-title">About me</h2>
       <span class="sec-line"></span>
     </div>
     <div class="about-grid">
@@ -397,8 +401,7 @@
 <section id="work">
   <div class="sec-glow"></div>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">02</span>
+    <div class="sec-head center reveal">
       <h2 class="sec-title">Selected work</h2>
       <span class="sec-line"></span>
     </div>
@@ -414,8 +417,7 @@
 <section id="experience">
   <div class="sec-glow"></div>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">03</span>
+    <div class="sec-head center reveal">
       <h2 class="sec-title">Experience</h2>
       <span class="sec-line"></span>
     </div>
@@ -459,8 +461,7 @@
 
 <section id="recommendations">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">04</span>
+    <div class="sec-head center reveal">
       <h2 class="sec-title">Recommendations</h2>
       <span class="sec-line"></span>
     </div>
