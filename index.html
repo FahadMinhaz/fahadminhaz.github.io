@@ -178,6 +178,24 @@
   #work .wrap,#experience .wrap{position:relative;z-index:2}
 
   /* contact */
+  #recommendations{position:relative;overflow:hidden}
+  #recommendations .wrap{position:relative;z-index:2}
+  .rec-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .rec-track{display:flex;width:max-content;animation:recScroll 70s linear infinite}
+  .rec-marquee:hover .rec-track,.rec-marquee:focus-within .rec-track{animation-play-state:paused}
+  .rec-set{display:flex}
+  @keyframes recScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .rec-card{width:340px;margin:0 16px 0 0;background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:border-color .3s}
+  .rec-card:hover{border-color:var(--purple)}
+  .rec-q{font-family:var(--display);font-size:52px;line-height:.7;height:26px;color:var(--purple-bright);margin-bottom:12px}
+  .rec-card blockquote{font-size:15px;line-height:1.65;color:var(--muted);flex:1;margin-bottom:22px}
+  .rec-card figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+  .rec-av{width:40px;height:40px;border-radius:50%;background:rgba(83,74,183,.28);color:var(--purple-bright);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:500;font-size:13px;flex-shrink:0}
+  .rec-name{font-family:var(--display);font-weight:500;font-size:15px;color:var(--text);display:block;transition:color .2s}
+  .rec-name:hover{color:var(--purple-bright)}
+  .rec-role{font-size:12.5px;color:var(--faint);line-height:1.4}
+  @media(max-width:600px){.rec-card{width:280px;padding:20px}}
+  @media(prefers-reduced-motion:reduce){.rec-track{animation:none;width:auto;flex-wrap:wrap}.rec-marquee{-webkit-mask-image:none;mask-image:none}.rec-set{flex-wrap:wrap;gap:16px}.rec-card{margin:0}.rec-dup{display:none}}
   .contact{text-align:center;padding-bottom:60px}
   .contact h2{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,64px);letter-spacing:-1.5px;margin-bottom:22px;line-height:1.02}
   .contact h2 em{font-style:normal;color:var(--purple-bright)}
@@ -435,6 +453,205 @@
           <div class="tl-desc">Social media visuals, logo design, stationery and print media design across day-to-day brand needs.</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="recommendations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">What people say</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="rec-marquee reveal">
+      <div class="rec-track">
+        <div class="rec-set">
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Fahad is a talented and dedicated Graphic Designer and UI/UX Designer who quickly grasped complex design concepts and turned them into clean, user-centered visuals.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">JB</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/jibran-bhatti-37374917a/" target="_blank" rel="noopener">Jibran Bhatti</a>
+                <div class="rec-role">Sr. UI/UX Designer · Mentor</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Fahad has a remarkable ability to create visually stunning, user-friendly interfaces that enhance the overall user experience.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">HK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/hamdan-bin-khalid-928b06108/" target="_blank" rel="noopener">Hamdan Bin Khalid</a>
+                <div class="rec-role">Design Lead · Team member</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>He always brought fresh ideas to the table, took feedback positively, and delivered beyond expectations on time, every time.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/seemakhatoon/" target="_blank" rel="noopener">Seema Khatoon</a>
+                <div class="rec-role">HR Generalist · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>I’ve had the privilege of witnessing Fahad’s growth over the past few years from a beginner to a mature and reliable professional.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">HK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/humzakhanbdm/" target="_blank" rel="noopener">Humza Khan</a>
+                <div class="rec-role">Business Unit Leader · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>He knows how to turn rough ideas into smooth, user-friendly designs that look great and feel even better.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/shahzaib-khan-623789288/" target="_blank" rel="noopener">Shahzaib Khan</a>
+                <div class="rec-role">Creative Designer · Team member</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>I wholeheartedly recommend Fahad for his exceptional UI UX design skills and creative vision.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SR</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/salman-raza-5586221a2/" target="_blank" rel="noopener">Salman Raza</a>
+                <div class="rec-role">WordPress Developer · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Always loved whatever he did for my client's. Keep Shining FAHAD ✨</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/syed-abdul-samad-k-296297118/" target="_blank" rel="noopener">Syed Abdul Samad Kazmi</a>
+                <div class="rec-role">Sales Team Lead · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Highly recommend to anyone looking for UI and graphic designs. Great team player and highly productive.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">TM</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/talha-minhaz-9759931bb/" target="_blank" rel="noopener">Talha Minhaz</a>
+                <div class="rec-role">Digital Marketing Expert · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="rec-set rec-dup" aria-hidden="true">
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Fahad is a talented and dedicated Graphic Designer and UI/UX Designer who quickly grasped complex design concepts and turned them into clean, user-centered visuals.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">JB</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/jibran-bhatti-37374917a/" target="_blank" rel="noopener" tabindex="-1">Jibran Bhatti</a>
+                <div class="rec-role">Sr. UI/UX Designer · Mentor</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Fahad has a remarkable ability to create visually stunning, user-friendly interfaces that enhance the overall user experience.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">HK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/hamdan-bin-khalid-928b06108/" target="_blank" rel="noopener" tabindex="-1">Hamdan Bin Khalid</a>
+                <div class="rec-role">Design Lead · Team member</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>He always brought fresh ideas to the table, took feedback positively, and delivered beyond expectations on time, every time.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/seemakhatoon/" target="_blank" rel="noopener" tabindex="-1">Seema Khatoon</a>
+                <div class="rec-role">HR Generalist · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>I’ve had the privilege of witnessing Fahad’s growth over the past few years from a beginner to a mature and reliable professional.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">HK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/humzakhanbdm/" target="_blank" rel="noopener" tabindex="-1">Humza Khan</a>
+                <div class="rec-role">Business Unit Leader · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>He knows how to turn rough ideas into smooth, user-friendly designs that look great and feel even better.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/shahzaib-khan-623789288/" target="_blank" rel="noopener" tabindex="-1">Shahzaib Khan</a>
+                <div class="rec-role">Creative Designer · Team member</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>I wholeheartedly recommend Fahad for his exceptional UI UX design skills and creative vision.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SR</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/salman-raza-5586221a2/" target="_blank" rel="noopener" tabindex="-1">Salman Raza</a>
+                <div class="rec-role">WordPress Developer · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Always loved whatever he did for my client's. Keep Shining FAHAD ✨</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">SK</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/syed-abdul-samad-k-296297118/" target="_blank" rel="noopener" tabindex="-1">Syed Abdul Samad Kazmi</a>
+                <div class="rec-role">Sales Team Lead · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="rec-card">
+            <div class="rec-q" aria-hidden="true">&ldquo;</div>
+            <blockquote>Highly recommend to anyone looking for UI and graphic designs. Great team player and highly productive.</blockquote>
+            <figcaption>
+              <div class="rec-av" aria-hidden="true">TM</div>
+              <div>
+                <a class="rec-name" href="https://www.linkedin.com/in/talha-minhaz-9759931bb/" target="_blank" rel="noopener" tabindex="-1">Talha Minhaz</a>
+                <div class="rec-role">Digital Marketing Expert · Colleague</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="work-foot reveal">
+      <a href="https://www.linkedin.com/in/fahadminhaz" target="_blank" rel="noopener" class="btn btn-ghost">Read all on LinkedIn
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
     </div>
   </div>
 </section>
