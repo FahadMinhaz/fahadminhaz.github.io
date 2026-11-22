@@ -136,6 +136,13 @@
 
   /* work */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .avail{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:14px;color:var(--muted)}
+  .avail-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:availPulse 2.2s infinite}
+  @keyframes availPulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.55)}70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+  @media(prefers-reduced-motion:reduce){.avail-dot{animation:none}}
+  .proj-info{padding:16px 4px 0}
+  .proj-info h3{font-family:var(--display);font-weight:500;font-size:18px;margin-bottom:6px}
+  .proj-info p{color:var(--muted);font-size:14px;line-height:1.6}
   .card{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg-2);aspect-ratio:4/3;display:block;transition:transform .3s,border-color .3s}
   .card:hover{transform:translateY(-5px);border-color:var(--purple)}
   .card img{width:100%;height:100%;object-fit:cover;transition:transform .5s,opacity .3s}
@@ -294,6 +301,7 @@
           </a>
           <a href="#contact" class="btn btn-ghost">Get in touch</a>
         </div>
+        <div class="avail"><span class="avail-dot"></span>Available for new projects</div>
       </div>
       <div class="hero-photo reveal">
         <img src="assets/fahad.png" alt="Fahad Minhaz">
@@ -449,6 +457,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
+        <a href="FAHAD_MINHAZ_RESUME.pdf" target="_blank" rel="noopener" download class="cm" aria-label="Download resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Resume
+        </a>
       </div>
     </div>
   </div>
@@ -462,38 +474,43 @@
       <a href="https://www.behance.net/fahadminhaz27" target="_blank" rel="noopener">Behance</a>
       <a href="https://www.linkedin.com/in/fahadminhaz" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:fahad.16august@gmail.com">Email</a>
+      <a href="FAHAD_MINHAZ_RESUME.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </div>
 </footer>
 
 <script>
   const projects = [
-    {title:"Hamieverse", cat:"Branding / Visuals", img:"assets/hamieverse.jpg", url:"https://www.behance.net/gallery/258850195/Visuals-Branding-Hamieverse", desc:"Visual identity and branding for Hamieverse, a web3 universe built around a bold, futuristic look with cross-platform visuals that feel unmistakably Hamie."},
-    {title:"Gaming PC", cat:"Social / Branding", img:"assets/gaming-pc.png", url:"https://www.behance.net/gallery/243989355/Gaming-PC-Social-Media-Branding", desc:"A bold social media and branding system for a gaming PC and laptop brand — high-energy visuals built to stop the scroll and drive engagement across platforms."},
-    {title:"Logo Lab", cat:"Branding", img:"assets/logolab.png", url:"https://www.behance.net/gallery/194230637/Branding-Logo-Lab", desc:"A complete brand identity for Logo Lab — mark, type system, and applications designed to feel sharp, modern, and instantly recognisable."},
-    {title:"Dymax Designs", cat:"Branding / UI", img:"https://mir-s3-cdn-cf.behance.net/projects/404/9f35b8219864081.Y3JvcCwyNzUwLDIxNTAsMCww.png", url:"https://www.behance.net/gallery/219864081/Branding-UI-Design-Dymax-Designs", desc:"Branding and UI design work for Dymax Designs, spanning visual identity and clean digital interfaces."},
-    {title:"Skin Care Website", cat:"Web / UI Design", img:"assets/skincare.png", url:"https://www.behance.net/gallery/189858637/Skin-Care-Website-Design-UI-Design", desc:"A warm, elegant website design for a skincare and massage brand — soft tones, clear hierarchy, and a conversion-focused landing experience."},
-    {title:"Mobile App Website", cat:"UI Design", img:"https://mir-s3-cdn-cf.behance.net/projects/404/ada4f8197568527.Y3JvcCwyNzUwLDIxNTAsMCww.png", url:"https://www.behance.net/gallery/197568527/Mobile-App-Website-Design-UI-Design", desc:"A modern marketing site for a mobile app, designed to showcase features and drive downloads with a clean, focused UI."},
-    {title:"A.I Website", cat:"UI Design", img:"https://mir-s3-cdn-cf.behance.net/projects/404/8f089e196377547.Y3JvcCwyNzUwLDIxNTAsMCwxNDI.png", url:"https://www.behance.net/gallery/196377547/AI-Website-Design-UI-Design", desc:"A sleek, futuristic UI for an AI product — dark theme, strong typography, and a confident tech-forward aesthetic."},
-    {title:"Perfume Brand", cat:"Social Visuals", img:"https://mir-s3-cdn-cf.behance.net/projects/404/29e3f3243922077.Y3JvcCwxODUzLDE0NDksNjQsMTY1.png", url:"https://www.behance.net/gallery/243922077/Perfume-Brand-Social-Media-Visuals", desc:"A set of refined social media visuals for a perfume brand — luxurious, minimal, and crafted to feel premium."}
+    {title:"Hamieverse", cat:"Branding / Visuals", img:"assets/hamieverse.jpg", url:"https://www.behance.net/gallery/258850195/Visuals-Branding-Hamieverse", desc:"Branding and campaign visuals for a Web3 universe: a bold, futuristic look carried consistently across every platform."},
+    {title:"Gaming PC", cat:"Social / Branding", img:"assets/gaming-pc.png", url:"https://www.behance.net/gallery/243989355/Gaming-PC-Social-Media-Branding", desc:"Social media and branding system for a gaming PC and laptop brand, built with high-energy visuals made to stop the scroll."},
+    {title:"Logo Lab", cat:"Branding", img:"assets/logolab.png", url:"https://www.behance.net/gallery/194230637/Branding-Logo-Lab", desc:"Complete brand identity covering the mark, type system and applications: sharp, modern and instantly recognisable."},
+    {title:"Dymax Designs", cat:"Branding / UI", img:"https://mir-s3-cdn-cf.behance.net/projects/404/9f35b8219864081.Y3JvcCwyNzUwLDIxNTAsMCww.png", url:"https://www.behance.net/gallery/219864081/Branding-UI-Design-Dymax-Designs", desc:"Visual identity and clean UI design for Dymax Designs, tied together as one consistent brand."},
+    {title:"Skin Care Website", cat:"Web / UI Design", img:"assets/skincare.png", url:"https://www.behance.net/gallery/189858637/Skin-Care-Website-Design-UI-Design", desc:"Warm, elegant website design for a skincare and massage brand, with soft tones, clear hierarchy and a landing page built to convert."},
+    {title:"Mobile App Website", cat:"UI Design", img:"https://mir-s3-cdn-cf.behance.net/projects/404/ada4f8197568527.Y3JvcCwyNzUwLDIxNTAsMCww.png", url:"https://www.behance.net/gallery/197568527/Mobile-App-Website-Design-UI-Design", desc:"Marketing site for a mobile app, designed to showcase features and drive downloads with a clean, focused UI."},
+    {title:"A.I Website", cat:"UI Design", img:"https://mir-s3-cdn-cf.behance.net/projects/404/8f089e196377547.Y3JvcCwyNzUwLDIxNTAsMCwxNDI.png", url:"https://www.behance.net/gallery/196377547/AI-Website-Design-UI-Design", desc:"Sleek, futuristic website UI for an AI product, with a dark theme, strong typography and a confident tech-forward feel."},
+    {title:"Perfume Brand", cat:"Social Visuals", img:"https://mir-s3-cdn-cf.behance.net/projects/404/29e3f3243922077.Y3JvcCwxODUzLDE0NDksNjQsMTY1.png", url:"https://www.behance.net/gallery/243922077/Perfume-Brand-Social-Media-Visuals", desc:"Refined social media visuals for a perfume brand: luxurious, minimal and crafted to feel premium."}
   ];
 
   const grid = document.getElementById('workGrid');
   projects.forEach(p=>{
-    const a = document.createElement('a');
-    a.href = p.url; a.target="_blank"; a.rel="noopener";
-    a.className = "card reveal";
-    a.innerHTML = `
-      <div class="card-fallback">${p.title}</div>
-      <img src="${p.img}" alt="${p.title}" loading="lazy" onload="this.style.opacity=1" style="opacity:0;position:relative;z-index:1">
-      <span class="card-always">${p.cat.split(' / ')[0]}</span>
-      <div class="card-overlay">
-        <span class="card-cat">${p.cat}</span>
-        <span class="card-title">${p.title}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-        </span>
+    const wrap = document.createElement('div');
+    wrap.className = "proj reveal";
+    wrap.innerHTML = `
+      <a href="${p.url}" target="_blank" rel="noopener" class="card" aria-label="${p.title} on Behance">
+        <div class="card-fallback">${p.title}</div>
+        <img src="${p.img}" alt="${p.title}" loading="lazy" onload="this.style.opacity=1" style="opacity:0;position:relative;z-index:1">
+        <span class="card-always">${p.cat.split(' / ')[0]}</span>
+        <div class="card-overlay">
+          <span class="card-title">View on Behance
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </span>
+        </div>
+      </a>
+      <div class="proj-info">
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
       </div>`;
-    grid.appendChild(a);
+    grid.appendChild(wrap);
   });
 
   // nav scroll + progress
